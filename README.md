@@ -11,7 +11,7 @@ Antes de começar, certifique-se de ter instalado em sua máquina:
 
 Siga o passo a passo abaixo no terminal para executar a aplicação localmente:
 
-### 1. Clone o repositório
+###  Clone o repositório
 git clone [https://github.com/brunoseleguim/Projeto-Jogador.git](https://github.com/brunoseleguim/Projeto-Jogador.git)
 2. Acesse a pasta do projeto
 Bash
