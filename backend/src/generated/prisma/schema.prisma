@@ -1,0 +1,45 @@
+// Define o gerador do Prisma Client
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated/prisma"
+}
+
+// Configura a conexão com o banco de dados PostgreSQL
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ENUM para o papel do usuário (Padrão Apostilas 1 e 2)
+enum Role {
+  STAFF // Usuário comum
+  ADMIN // Usuário administrador
+}
+
+// Modelo de usuário (tabela "users" - Padrão Apostilas 1 e 2)
+model User {
+  id        String   @id @default(uuid())
+  name      String
+  email     String   @unique
+  password  String
+  role      Role     @default(STAFF)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("users")
+}
+
+// Modelo do tema da dupla: Jogador de Futebol (tabela "players" - Apostila 3)
+model Player {
+  id          String   @id @default(uuid())
+  name        String // 1. Nome do jogador (ex: "Neymar Jr")
+  age         Int // 2. Idade (ex: 34)
+  position    String // 3. Posição em campo (ex: "Atacante", "Meio-campo", "Goleiro")
+  club        String // 4. Clube atual (ex: "Santos")
+  nationality String // 5. Nacionalidade (ex: "Brasileiro")
+  shirtNumber Int // 6. Número da camisa (ex: 10)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("players")
+}
