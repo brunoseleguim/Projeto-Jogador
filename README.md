@@ -38,3 +38,7 @@ npm install — Instala as dependências listadas no package.json.
 npm run dev / npm start — Inicia o projeto em modo de desenvolvimento.
 
 npm run build — Gera a versão otimizada para produção.
+
+#PARTICIPANTES: 
+MATHEUS HENRIQUE BERNARDES DE OLIVEIRA
+                BRUNO SELEGUIM DOS SANTOS
